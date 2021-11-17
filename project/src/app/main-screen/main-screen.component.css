@@ -1,0 +1,28 @@
+.container {
+  background-color: rgb(235, 233, 233);
+  max-width: 900px;
+  min-height: 600px;
+  margin: auto;
+  border: 1px black solid;
+  position: relative;
+}
+
+.blog-title {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.content-area {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  padding: 0 30px;
+}
+
+.add-section-button {
+  position: absolute;
+  bottom: 30px;
+  right: 15px;
+  background-color: lightblue;
+  padding: 10px;
+}

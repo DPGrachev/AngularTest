@@ -1,0 +1,29 @@
+.section-item {
+  width: 200px;
+  margin: 0 40px 30px;
+}
+
+.section-title {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.section-content {
+  background-color: white;
+    border: 1px black solid;
+    height: 85px;
+    padding: 5px;
+    word-break: break-all;
+    overflow: hidden;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.open-section-button {
+  width: inherit;
+  background-color: lightblue;
+  border-radius: 5px;  
+}
