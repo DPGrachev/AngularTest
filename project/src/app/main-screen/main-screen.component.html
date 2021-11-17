@@ -1,0 +1,7 @@
+<div class="container">
+  <h1 class="blog-title">Блог</h1>
+  <section class="content-area">
+    <app-section *ngFor="let section of sections" [title]="section.title" [content]="section.content"></app-section>
+  </section>
+  <button class="add-section-button">+ Добавить</button>
+</div>
