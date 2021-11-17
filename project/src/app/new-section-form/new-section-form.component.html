@@ -1,0 +1,17 @@
+<form class="new-section-form" (submit)="onSubmit()">
+  <input
+    name="title-input"
+    type="text"
+    placeholder="title"
+    [(ngModel)]="title"
+  >
+  <textarea
+    name="content-text"
+    placeholder="content"
+    [(ngModel)]="content"
+  ></textarea>
+  <div class="new-section-buttons">
+    <button class="cancel" (click)="onCancelButtonClick()">Отмена</button>
+    <button type="submit" class="add">Сохранить</button>
+  </div>
+</form>

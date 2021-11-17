@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Section } from '../app.component';
+import { Component, OnInit } from '@angular/core';
+import { SectionsService } from '../service/sections.service';
 
 @Component({
   selector: 'app-main-screen',
@@ -8,11 +8,19 @@ import { Section } from '../app.component';
 })
 export class MainScreenComponent implements OnInit {
 
-  @Input() sections: Section[] = []
+  constructor(public SectionsService: SectionsService) { }
 
-  constructor() { }
+  isEditMode: boolean = false;
 
   ngOnInit(): void {
+  }
+
+  onAddNewSectionClick (): void {
+    this.isEditMode = true;
+  }
+
+  closeNewSectionForm (): void {
+    this.isEditMode = false;
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Section } from '../app.component';
 
 @Component({
   selector: 'app-section',

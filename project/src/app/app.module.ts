@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainScreenComponent } from './main-screen/main-screen.component';
 import { SectionComponent } from './section/section.component';
+import { NewSectionFormComponent } from './new-section-form/new-section-form.component';
+import { FormsModule } from '@angular/forms';
+import { SectionScreenComponent } from './section-screen/section-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainScreenComponent,
-    SectionComponent
+    SectionComponent,
+    NewSectionFormComponent,
+    SectionScreenComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
