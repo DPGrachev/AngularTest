@@ -8,6 +8,7 @@ import { SectionComponent } from './section/section.component';
 import { NewSectionFormComponent } from './new-section-form/new-section-form.component';
 import { FormsModule } from '@angular/forms';
 import { SectionScreenComponent } from './section-screen/section-screen.component';
+import { NotFoundScreenComponent } from './not-found-screen/not-found-screen.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SectionScreenComponent } from './section-screen/section-screen.componen
     MainScreenComponent,
     SectionComponent,
     NewSectionFormComponent,
-    SectionScreenComponent
+    SectionScreenComponent,
+    NotFoundScreenComponent
   ],
   imports: [
     BrowserModule,

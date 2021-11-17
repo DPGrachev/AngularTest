@@ -2,8 +2,9 @@
   <div [class.overlay]="isEditMode"></div>
   <h1 class="blog-title">Блог</h1>
   <section class="content-area">
-    <app-section *ngFor="let section of SectionsService.sections" [title]="section.title" [content]="section.content"></app-section>
+    <app-section *ngFor="let section of SectionsService.sections" [title]="section.title" [content]="section.content" [id]="section.id"></app-section>
   </section>
   <button class="add-section-button" (click)="onAddNewSectionClick()">+ Добавить</button>
-  <app-new-section-form *ngIf="isEditMode" (closeNewSectionForm)="closeNewSectionForm()"></app-new-section-form>
+  <app-new-section-form *ngIf="isEditMode" (closeNewSectionForm)="closeNewSectionForm()" [id]="SectionsService.sections.length + 1"></app-new-section-form>
 </div>
+<router-outlet></router-outlet>

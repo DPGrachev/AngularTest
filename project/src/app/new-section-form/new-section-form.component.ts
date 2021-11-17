@@ -11,6 +11,7 @@ export class NewSectionFormComponent implements OnInit {
   title: string = '';
   content: string = '';
 
+  @Input() id: number = 0;
   @Output() closeNewSectionForm = new EventEmitter<void>();
 
   constructor(public SectionsService: SectionsService) { }
@@ -24,6 +25,7 @@ export class NewSectionFormComponent implements OnInit {
 
   onSubmit (): void {
     const section: Section = {
+      id: this.id,
       title : this.title,
       content: this.content,
     }
