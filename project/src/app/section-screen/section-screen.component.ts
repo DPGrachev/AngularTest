@@ -9,8 +9,11 @@ import { Section, SectionsService } from '../service/sections.service';
   styleUrls: ['./section-screen.component.css']
 })
 export class SectionScreenComponent implements OnInit {
-  currentSection! : Section;
   id!: number;
+  isDeleteMode: boolean = false;
+  title! : string;
+  content!: string;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -21,14 +24,34 @@ export class SectionScreenComponent implements OnInit {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     const section = this.sectionsService.getSectionForId(this.id);
     if(!section){
-      this.router.navigate(['/']);
+      this.redirectToMainScreen();
     }else{
-      this.currentSection = section
+      this.title = section.title;
+      this.content = section.content;
     }
   }
 
-  onGoBackButtonClick () {
+  redirectToMainScreen () {
     this.router.navigate(['/']);
+  }
+
+  updateSection() {
+    const updatedSection = {
+      id: this.id,
+      title: this.title,
+      content: this.content,
+    };
+    this.sectionsService.updateSection(updatedSection);
+    this.redirectToMainScreen();
+  }
+
+  changeFormMode () {
+    this.isDeleteMode = !this.isDeleteMode;
+  }
+
+  deleteSection () {
+    this.sectionsService.deleteSection(this.id);
+    this.redirectToMainScreen();
   }
 
 }

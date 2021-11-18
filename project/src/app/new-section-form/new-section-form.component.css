@@ -24,7 +24,7 @@ textarea {
 
 .new-section-buttons {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 button {

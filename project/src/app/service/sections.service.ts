@@ -21,4 +21,13 @@ export class SectionsService {
   public getSectionForId (id: number) {
     return this.sections.find((section) => section.id === id)
   }
+
+  public deleteSection(id: number) {
+    this.sections = this.sections.filter((section) => section.id !== id);
+  }
+
+  public updateSection(section: Section) {
+    const index = this.sections.findIndex((item) => item.id === section.id);
+    this.sections[index] = section;
+  }
 }
