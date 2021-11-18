@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-not-found-screen',
@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./not-found-screen.component.css']
 })
 export class NotFoundScreenComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

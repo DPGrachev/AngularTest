@@ -1,14 +1,17 @@
-<form class="new-section-form" (submit)="onSubmit()">
+<form class="new-section-form" (submit)="onSubmit()" id="new-section-form" ngNativeValidate>
   <input
     name="title-input"
     type="text"
     placeholder="title"
     [(ngModel)]="title"
+    required
   >
   <textarea
     name="content-text"
     placeholder="content"
     [(ngModel)]="content"
+    minlength="5"
+    required
   ></textarea>
   <div class="new-section-buttons">
     <button class="cancel" (click)="onCancelButtonClick()">Отмена</button>

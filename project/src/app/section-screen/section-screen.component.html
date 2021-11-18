@@ -2,27 +2,30 @@
   <div [class.overlay]="isDeleteMode"></div>
   <button class="go-back-button" (click)="redirectToMainScreen()">Назад</button>
   <label for="section-form" class="form-title">Запись "title записи"</label>
-  <form name="section-form">
+  <form name="section-form" ngNativeValidate (submit)="updateSection()">
     <input
     name="title-input"
     type="text"
     placeholder="title записи"
     [(ngModel)]="title"
+    required
     >
     <textarea
       name="content-text"
       placeholder="Контент записи"
       [(ngModel)]="content"
+      minlength="5"
+      required
     ></textarea>
     <div class="form-buttons">
-      <button class="delete-button" (click)="changeFormMode()">Удалить</button>
-      <button type="submit-button" class="add" (click)="updateSection()">Сохранить</button>
+      <button type="button" class="delete-button" (click)="changeFormMode()">Удалить</button>
+      <button type="submit" class="add">Сохранить</button>
     </div>
   </form>
   <div class="confirm-delete-form" *ngIf="isDeleteMode">
     <p>Вы уверены, что хотите удалить раздел?</p>
     <div class="delete-form-buttons">
-      <button type="submit" class="cancel-delete-button" (click)="changeFormMode()">Нет</button>
+      <button class="cancel-delete-button" (click)="changeFormMode()">Нет</button>
       <button class="confirm-delete-button" (click)="deleteSection()">Да</button>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { Section, SectionsService } from '../service/sections.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { Section, SectionsService } from '../service/sections.service';
 })
 export class NewSectionFormComponent implements OnInit {
 
+  insideClick: boolean = true;
   title: string = '';
   content: string = '';
 
@@ -21,6 +22,20 @@ export class NewSectionFormComponent implements OnInit {
 
   onCancelButtonClick (): void {
     this.closeNewSectionForm.emit();
+  }
+
+  
+  @HostListener('click')
+  clicked() {
+    this.insideClick = true;
+  }
+
+  @HostListener("document:click")
+  clickedOut() {
+    if(!this.insideClick){
+      this.closeNewSectionForm.emit();
+    }
+    this.insideClick = false;
   }
 
   onSubmit (): void {
